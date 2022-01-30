@@ -7,7 +7,7 @@ declare module 'fetch-intercept' {
   export interface FetchInterceptor {
     request?(url: string, config: any): Promise<any[]> | any[];
     requestError?(error: any): Promise<any>;
-    response?(response: FetchInterceptorResponse): FetchInterceptorResponse;
+    response?(response: FetchInterceptorResponse): FetchInterceptorResponse | Response | Promise<FetchInterceptorResponse | Response>;
     responseError?(error: any): Promise<any>;
   }
 
